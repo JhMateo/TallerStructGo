@@ -10,32 +10,35 @@ import (
 */
 
 func PromediosPorRangoEdad(estudiantes []reader.Estudiante) {
-	rangosEdad := map[string]int{
-		"20-29":    0,
-		"30-39":    0,
-		"40-49":    0,
-		"50-59":    0,
-		"60 o más": 0,
+	rangosEdad := map[string][]float64{
+		"20-29":    []float64{},
+		"30-39":    []float64{},
+		"40-49":    []float64{},
+		"50-59":    []float64{},
+		"60 o más": []float64{},
 	}
 
 	totalEstudiantes := len(estudiantes)
-
-	for _, estudiante := range estudiantes {
-		rango := obtenerRangoEdad(estudiante.Edad)
-		if rango != "" {
-			rangosEdad[rango]++
-		}
-	}
 
 	if totalEstudiantes == 0 {
 		fmt.Println("No hay estudiantes para calcular promedios.")
 		return
 	}
 
+	for _, estudiante := range estudiantes {
+		rango := obtenerRangoEdad(estudiante.Edad)
+		if rango != "" {
+			rangosEdad[rango] = append(rangosEdad[rango], calcularPromedio(estudiante.Cursos))
+		}
+	}
+
 	fmt.Println("Promedio de estudiantes por rango de edad:")
-	for rango, cantidad := range rangosEdad {
-		promedio := float64(cantidad) / float64(totalEstudiantes)
-		fmt.Printf("Rango de edad(%s): %.2f -> %.1f%% estudiantes\n", rango, promedio, promedio*100)
+	for rango, notas := range rangosEdad {
+		promedio := 0.0
+		if len(notas) != 0 {
+			promedio = calcularPromedioANotas(notas)
+		}
+		fmt.Printf("Rango de edad(%s): %.2f\n", rango, promedio)
 	}
 }
 
@@ -54,4 +57,12 @@ func obtenerRangoEdad(edad int) string {
 	default:
 		return ""
 	}
+}
+
+func calcularPromedioANotas(notas []float64) float64 {
+	suma := 0.0
+	for _, nota := range notas {
+		suma += nota
+	}
+	return suma / float64(len(notas))
 }
