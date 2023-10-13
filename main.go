@@ -27,4 +27,8 @@ func main() {
 	// 4. Top 10 estudiantes con peores notas de cada curso
 	fmt.Println("\n---- TOP 10 ESTUDIANTES CON PEORES NOTAS DE CADA CURSO ----")
 	taller.Top10PeoresPorCurso(estudiantes)
+
+	// 8. Reporte de estudiantes que se matricularon en el año pasado (2022).
+	fmt.Println("\n---- REPORTE DE ESTUDIANTES QUE SE MATRICULARON EN EL AÑO PASADO (2022) ----")
+	taller.Matriculados2022(estudiantes)
 }
