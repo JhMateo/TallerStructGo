@@ -20,7 +20,11 @@ func main() {
 	fmt.Println("\n---- PEOR PROMEDIO ----")
 	taller.PeorPromedio(estudiantes)
 
-	// 2. Top 10 estudiantes con mejores notas de cada curso
+	// 3. Top 10 estudiantes con mejores notas de cada curso
 	fmt.Println("\n---- TOP 10 ESTUDIANTES CON MEJORES NOTAS DE CADA CURSO ----")
-	taller.Top10Estudantes(estudiantes)
+	taller.Top10MejoresPorCurso(estudiantes)
+
+	// 4. Top 10 estudiantes con peores notas de cada curso
+	fmt.Println("\n---- TOP 10 ESTUDIANTES CON PEORES NOTAS DE CADA CURSO ----")
+	taller.Top10PeoresPorCurso(estudiantes)
 }

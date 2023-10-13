@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/tallerStruct.iml" filepath="$PROJECT_DIR$/.idea/tallerStruct.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/tallerStructGo.iml" filepath="$PROJECT_DIR$/.idea/tallerStructGo.iml" />
     </modules>
   </component>
 </project>
