@@ -9,9 +9,9 @@ import (
 	2. Estudiante con peor promedio
 */
 
-func PeorPromedio(estudiantes []reader.Estudiante) {
-	peorEstudiante := estudiantes[0]
-	peorPromedio := calcularPromedio(peorEstudiante.Cursos)
+func PeorPromedio(estudiantes []reader.Estudiante) (peorEstudiante reader.Estudiante, peorPromedio float64) {
+	peorEstudiante = estudiantes[0]
+	peorPromedio = calcularPromedio(peorEstudiante.Cursos)
 
 	// Iteramos sobre los demás estudiantes y comparamos los promedios.
 	for _, estudiante := range estudiantes[1:] {
@@ -25,4 +25,6 @@ func PeorPromedio(estudiantes []reader.Estudiante) {
 	fmt.Println("El estudiante con el peor promedio es:")
 	fmt.Printf("Nombre: %s %s\n", peorEstudiante.Nombre, peorEstudiante.Apellido)
 	fmt.Printf("Promedio: %.2f\n", peorPromedio)
+
+	return peorEstudiante, peorPromedio
 }
