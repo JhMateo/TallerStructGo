@@ -31,6 +31,10 @@ func ExecuteWeb(estudiantes []reader.Estudiante) {
 		PeorPromedioHandler(w, r, estudiantes)
 	})
 
+	http.HandleFunc("/top10_mejores", func(w http.ResponseWriter, r *http.Request) {
+		Top10MejoresPorCursoHandler(w, r, estudiantes)
+	})
+
 	fsStatic := http.FileServer(http.Dir("templates/static"))
 
 	// Establece una ruta para servir archivos estáticos.

@@ -18,13 +18,13 @@ type NotaEstudiante struct {
 
 type NotasPorCurso map[string][]NotaEstudiante
 
-func Top10MejoresPorCurso(estudiantes []reader.Estudiante) {
-	procesarNotas(estudiantes, func(nota1, nota2 float64) bool {
+func Top10MejoresPorCurso(estudiantes []reader.Estudiante) map[string][]NotaEstudiante {
+	return procesarNotas(estudiantes, func(nota1, nota2 float64) bool {
 		return nota1 > nota2
 	})
 }
 
-func procesarNotas(estudiantes []reader.Estudiante, obtenerTop func(float64, float64) bool) {
+func procesarNotas(estudiantes []reader.Estudiante, obtenerTop func(float64, float64) bool) map[string][]NotaEstudiante {
 	// Crea un mapa para almacenar las notas de los estudiantes por curso
 	notasPorCurso := make(NotasPorCurso)
 
@@ -66,4 +66,6 @@ func procesarNotas(estudiantes []reader.Estudiante, obtenerTop func(float64, flo
 		}
 		fmt.Println()
 	}
+
+	return notasPorCurso
 }
