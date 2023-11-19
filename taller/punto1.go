@@ -9,9 +9,9 @@ import (
 	1. Estudiante con mejor promedio
 */
 
-func MejorPromedio(estudiantes []reader.Estudiante) {
-	mejorEstudiante := estudiantes[0]
-	mejorPromedio := calcularPromedio(mejorEstudiante.Cursos)
+func MejorPromedio(estudiantes []reader.Estudiante) (mejorEstudiante reader.Estudiante, mejorPromedio float64) {
+	mejorEstudiante = estudiantes[0]
+	mejorPromedio = calcularPromedio(mejorEstudiante.Cursos)
 
 	// Iteramos sobre los demás estudiantes y comparamos los promedios.
 	for _, estudiante := range estudiantes[1:] {
@@ -25,6 +25,8 @@ func MejorPromedio(estudiantes []reader.Estudiante) {
 	fmt.Println("El estudiante con el mejor promedio es:")
 	fmt.Printf("Nombre: %s %s\n", mejorEstudiante.Nombre, mejorEstudiante.Apellido)
 	fmt.Printf("Promedio: %.2f\n", mejorPromedio)
+
+	return mejorEstudiante, mejorPromedio
 }
 
 func calcularPromedio(cursos []reader.Curso) float64 {
