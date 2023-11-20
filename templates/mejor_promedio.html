@@ -8,11 +8,26 @@
     <link rel="icon" type="image/x-icon" href="static/favicon.ico">
     <link rel="stylesheet" type="text/css" href="static/styles.css">
 
-    <title>Mejor Promedio</title>
+    <title>1. Mejor Promedio</title>
 </head>
 <body>
-    <h1>Estudiante con Mejor Promedio</h1>
-    <p>Nombre: {{.Nombre}} {{.Apellido}}</p>
-    <p>Promedio: {{.Promedio}}</p>
+<div class="header">
+    <h1>1. Estudiante con Mejor Promedio</h1>
+</div>
+
+<div class="container">
+    <p><strong>Nombre:</strong>  {{.Nombre}} {{.Apellido}}</p>
+    <p><strong>Promedio:</strong> {{.Promedio}}</p>
+</div>
+
+<div class="footer-container">
+    <a class="nav-button right-button" href="/peor_promedio">2. Estudiante con Peor Promedio</a>
+
+    <div class="footer">
+        Joshep Mateo Granada - 160004314<br>
+        Jhon Mauro Guevara - 160004315<br>
+        Go
+    </div>
+</div>
 </body>
 </html>

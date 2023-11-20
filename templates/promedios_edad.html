@@ -8,11 +8,14 @@
     <link rel="icon" type="image/x-icon" href="static/favicon.ico">
     <link rel="stylesheet" type="text/css" href="static/styles.css">
 
-    <title>Estudiantes Matriculados en 2022</title>
+    <title>9. Promedio de Estudiantes por Rango de Edad</title>
 </head>
 <body>
-    <h1>Promedio de Estudiantes por Rango de Edad</h1>
+<div class="header">
+    <h1>9. Promedio de Estudiantes por Rango de Edad</h1>
+</div>
 
+<div class="container">
     {{if .}}
     <table>
         <tr>
@@ -29,5 +32,19 @@
     {{else}}
     <p>No hay estudiantes para calcular promedios.</p>
     {{end}}
+</div>
+
+<div class="footer-container">
+    <div class="button-footer">
+        <a class="nav-button left-button" href="/matriculados">8. Estudiantes Matriculados en 2022</a>
+    </div>
+
+    <div class="footer">
+        Joshep Mateo Granada - 160004314<br>
+        Jhon Mauro Guevara - 160004315<br>
+        Go
+    </div>
+</div>
+
 </body>
 </html>

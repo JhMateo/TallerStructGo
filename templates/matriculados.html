@@ -8,11 +8,14 @@
     <link rel="icon" type="image/x-icon" href="static/favicon.ico">
     <link rel="stylesheet" type="text/css" href="static/styles.css">
 
-    <title>Estudiantes Matriculados en 2022</title>
+    <title>8. Estudiantes Matriculados en 2022</title>
 </head>
 <body>
-    <h1>Estudiantes Matriculados en 2022</h1>
+<div class="header">
+    <h1>8. Estudiantes Matriculados en 2022</h1>
+</div>
 
+<div class="container">
     {{if .}}
     <table>
         <tr>
@@ -31,5 +34,20 @@
     {{else}}
     <p>No se encontraron estudiantes matriculados en 2022.</p>
     {{end}}
+</div>
+
+<div class="footer-container">
+    <div class="button-footer">
+        <a class="nav-button left-button" href="/estadisticas_cursos">7. Estadísticas por Curso</a>
+        <a class="nav-button right-button" href="/promedios_edad">9. Promedio de Estudiantes por Rango de Edad</a>
+    </div>
+
+    <div class="footer">
+        Joshep Mateo Granada - 160004314<br>
+        Jhon Mauro Guevara - 160004315<br>
+        Go
+    </div>
+</div>
+
 </body>
 </html>

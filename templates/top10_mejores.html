@@ -8,20 +8,55 @@
     <link rel="icon" type="image/x-icon" href="static/favicon.ico">
     <link rel="stylesheet" type="text/css" href="static/styles.css">
 
-    <title>Top 10 Mejores por Curso</title>
+    <title>3. Top 10 Mejores por Curso</title>
 </head>
 <body>
-    <h1>Top 10 Estudiantes con Mejores Notas por Curso</h1>
+<div class="header">
+    <h1>3. Top 10 Estudiantes con Mejores Notas por Curso</h1>
+</div>
+
+<div class="container">
     {{range $curso, $estudiantes := .}}
-    <h2>Curso: {{$curso}}</h2>
-    <ul>
-        {{range $index, $estudiante := $estudiantes}}
+    <div class="curso-info spacer">
+        <h2>Curso: {{$curso}}</h2>
+        <table class="top10-table">
+            <thead>
+            <tr>
+                <th>Posición</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Nota</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{range $index, $estudiante := $estudiantes}}
             {{if le $index 9}}
-            <!-- TODO: Arreglar esto porque empieza en 0-->
-                {{$index}}. {{$estudiante.Nombre}} {{$estudiante.Apellido}} - Nota: {{$estudiante.Nota}}<br>
+            <tr>
+                <td>{{$index}}</td>
+                <td>{{$estudiante.Nombre}}</td>
+                <td>{{$estudiante.Apellido}}</td>
+                <td>{{$estudiante.Nota}}</td>
+            </tr>
             {{end}}
-        {{end}}
-    </ul>
+            {{end}}
+            </tbody>
+        </table>
+    </div>
     {{end}}
+</div>
+
+<div class="footer-container">
+    <div class="button-footer">
+        <a class="nav-button left-button" href="/peor_promedio">2. Estudiante con Peor Promedio</a>
+        <a class="nav-button right-button" href="/top10_peores">4. Top 10 peores estudiantes</a>
+    </div>
+
+    <div class="footer">
+        Joshep Mateo Granada - 160004314<br>
+        Jhon Mauro Guevara - 160004315<br>
+        Go
+    </div>
+</div>
+
 </body>
 </html>
