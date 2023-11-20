@@ -51,6 +51,10 @@ func ExecuteWeb(estudiantes []reader.Estudiante) {
 		EstadisticasPorCursoHandler(w, r, estudiantes)
 	})
 
+	http.HandleFunc("/matriculados", func(w http.ResponseWriter, r *http.Request) {
+		MatriculadosHandler(w, r, estudiantes)
+	})
+
 	fsStatic := http.FileServer(http.Dir("templates/static"))
 
 	// Establece una ruta para servir archivos estáticos.

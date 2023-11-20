@@ -9,7 +9,7 @@ import (
 	8. Reporte de estudiantes que se matricularon en el año pasado (2022).
 */
 
-func Matriculados2022(estudiantes []reader.Estudiante) {
+func Matriculados2022(estudiantes []reader.Estudiante) map[string]string {
 	// Crear un mapa para almacenar estudiantes matriculados en 2022 con sus fechas de matriculación
 	matriculados := make(map[string]string)
 
@@ -31,4 +31,6 @@ func Matriculados2022(estudiantes []reader.Estudiante) {
 			i++
 		}
 	}
+
+	return matriculados
 }
