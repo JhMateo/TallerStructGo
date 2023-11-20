@@ -6,7 +6,7 @@ import (
 	"github.com/JhMateo/tallerStruct/reader"
 )
 
-func encontrarEstudiantesMayorEdadPorGenero(estudiantes []reader.Estudiante, genero string) []reader.Estudiante {
+func EncontrarEstudiantesMayorEdadPorGenero(estudiantes []reader.Estudiante, genero string) []reader.Estudiante {
 	var estudiantesMayoresEdad []reader.Estudiante
 	var mayorEdad int
 
@@ -26,11 +26,11 @@ func encontrarEstudiantesMayorEdadPorGenero(estudiantes []reader.Estudiante, gen
 }
 
 func ImprimirEstudiantesMayorEdadNombreEdad(estudiantes []reader.Estudiante, genero string) {
-	estudiantesMayoresEdad := encontrarEstudiantesMayorEdadPorGenero(estudiantes, genero)
+	estudiantesMayoresEdad := EncontrarEstudiantesMayorEdadPorGenero(estudiantes, genero)
 
 	fmt.Printf("Estudiantes %s de mayor edad:\n", genero)
 	for _, estudiante := range estudiantesMayoresEdad {
-		fmt.Printf("Nombre: %s\n", estudiante.Nombre)
+		fmt.Printf("Nombre: %s %s\n", estudiante.Nombre, estudiante.Apellido)
 		fmt.Printf("Edad: %d\n", estudiante.Edad)
 		fmt.Println("-----")
 	}
