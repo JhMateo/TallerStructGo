@@ -26,17 +26,15 @@ body.dark-mode {
     background-color: #00acd8;
     color: white;
     text-align: center;
-    padding: 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+    padding: 60px 20px 20px 20px; /* Ajusta el espacio según tus preferencias */
+    box-sizing: border-box;
+    margin-top: 44px;
 }
 
 .container {
     max-width: 960px;
     padding: 20px;
-    margin: 135px auto 0 auto;
+    margin: 10px auto 0 auto;
 }
 
 .button {
@@ -105,7 +103,7 @@ th {
 }
 
 .spacer {
-    margin-top: 200px;
+    margin-top: 100px;
 }
 
 .nav-button {
@@ -165,4 +163,28 @@ th {
     width: 25%;
     box-sizing: border-box;
     margin-right: 10px;
+}
+
+.navbar {
+    background-color: #00acd8;
+    overflow: hidden;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    left: 0;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.navbar a:hover {
+    background-color: #007c9d;
 }
