@@ -55,6 +55,10 @@ func ExecuteWeb(estudiantes []reader.Estudiante) {
 		MatriculadosHandler(w, r, estudiantes)
 	})
 
+	http.HandleFunc("/promedios_edad", func(w http.ResponseWriter, r *http.Request) {
+		PromediosPorRangoEdadHandler(w, r, estudiantes)
+	})
+
 	fsStatic := http.FileServer(http.Dir("templates/static"))
 
 	// Establece una ruta para servir archivos estáticos.

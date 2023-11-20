@@ -9,7 +9,7 @@ import (
 	9. Promedio de estudiantes por cada rango de edad (20-29, 30-39, 40-49,...)
 */
 
-func PromediosPorRangoEdad(estudiantes []reader.Estudiante) {
+func PromediosPorRangoEdad(estudiantes []reader.Estudiante) map[string]float64 {
 	rangosEdad := map[string][]float64{
 		"20-29":    []float64{},
 		"30-39":    []float64{},
@@ -22,7 +22,7 @@ func PromediosPorRangoEdad(estudiantes []reader.Estudiante) {
 
 	if totalEstudiantes == 0 {
 		fmt.Println("No hay estudiantes para calcular promedios.")
-		return
+		return nil
 	}
 
 	for _, estudiante := range estudiantes {
@@ -32,14 +32,19 @@ func PromediosPorRangoEdad(estudiantes []reader.Estudiante) {
 		}
 	}
 
+	resultados := make(map[string]float64)
+
 	fmt.Println("Promedio de estudiantes por rango de edad:")
 	for rango, notas := range rangosEdad {
 		promedio := 0.0
 		if len(notas) != 0 {
 			promedio = calcularPromedioANotas(notas)
 		}
+		resultados[rango] = promedio
 		fmt.Printf("Rango de edad(%s): %.2f\n", rango, promedio)
 	}
+
+	return resultados
 }
 
 func obtenerRangoEdad(edad int) string {

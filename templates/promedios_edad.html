@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="icon" type="image/x-icon" href="static/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="static/styles.css">
+
+    <title>Estudiantes Matriculados en 2022</title>
+</head>
+<body>
+    <h1>Promedio de Estudiantes por Rango de Edad</h1>
+
+    {{if .}}
+    <table>
+        <tr>
+            <th>Rango de Edad</th>
+            <th>Promedio</th>
+        </tr>
+        {{range $key, $value := .}}
+        <tr>
+            <td>{{$key}}</td>
+            <td>{{$value}}</td>
+        </tr>
+        {{end}}
+    </table>
+    {{else}}
+    <p>No hay estudiantes para calcular promedios.</p>
+    {{end}}
+</body>
+</html>
