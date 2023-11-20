@@ -47,6 +47,10 @@ func ExecuteWeb(estudiantes []reader.Estudiante) {
 		MujerMayorHandler(w, r, estudiantes)
 	})
 
+	http.HandleFunc("/estadisticas_cursos", func(w http.ResponseWriter, r *http.Request) {
+		EstadisticasPorCursoHandler(w, r, estudiantes)
+	})
+
 	fsStatic := http.FileServer(http.Dir("templates/static"))
 
 	// Establece una ruta para servir archivos estáticos.
